@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
-from Scripts.finanzas_personales.ingreso_manual import app as ingreso_app
-from Scripts.finanzas_personales.dolar_mep import obtener_dolar_mep
-from Scripts.finanzas_personales.dashboard import app as dashboard_app
-from Scripts.finanzas_personales.vencimientos import app as vencimientos_app
+from ingreso_manual import app as ingreso_app
+from dolar_mep import obtener_dolar_mep
+from dashboard import app as dashboard_app
+from vencimientos import app as vencimientos_app
 
 st.set_page_config(page_title="Gestor de Finanzas", layout="centered")
 
