@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 import os
-from Scripts.finanzas_personales.dolar_mep import obtener_dolar_mep
+from dolar_mep import obtener_dolar_mep
 
 def app():
     st.title("📝 Ingreso manual de gasto o ingreso")
