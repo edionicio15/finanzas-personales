@@ -1,61 +1,79 @@
 # 📊 Gestor de Finanzas Personales
 
-Esta app te permite gestionar tus ingresos, gastos, vencimientos y consultar el dólar MEP desde una interfaz simple usando Streamlit.
-
-## ✅ Funcionalidades principales
-
-- Registro manual de ingresos y gastos (ARS o USD)
-- Conversión automática de USD a ARS con cotización MEP en tiempo real
-- Dashboard con métricas y gráficos
-- Generación de recordatorios en archivo .ics para calendario
-- Soporte para múltiples cuentas/tarjetas
+Esta app te permite gestionar ingresos, gastos, recordatorios y consultar el dólar MEP desde una interfaz web simple y visual (usando Streamlit).
 
 ---
 
-## 🚀 Requisitos
+## ✅ Funcionalidades principales
+
+- Registro manual de ingresos y gastos
+- Conversión automática de USD a ARS con dólar MEP en tiempo real
+- Dashboard con métricas, gráficos y evolución mensual
+- Generación de recordatorios en formato .ics (para Google Calendar u Outlook)
+- Soporte para múltiples cuentas y tarjetas
+- Selección de **categorías y cuentas desde un archivo editable (`CATEGORIAS.xlsx`)**
+
+---
+
+## 🆕 NUEVO: Categorías y Cuentas dinámicas
+
+- Las listas desplegables de "Categoría" y "Cuenta/Tarjeta" se cargan automáticamente desde el archivo:
+  ```
+  CATEGORIAS.xlsx
+  ```
+- También podés ingresar una **categoría o cuenta nueva manualmente** (opción "Otra...").
+
+---
+
+## 📂 Estructura esperada del archivo `CATEGORIAS.xlsx`
+
+Debe tener una hoja (por ejemplo, `Hoja1`) con estas columnas:
+
+| CATEGORIA       | CUENTA     |
+|------------------|------------|
+| SALARIO          | GALICIA    |
+| HONORARIOS       | BRUBANK    |
+| CUOTA ESCUELA    | MACRO      |
+| ...              | ...        |
+
+---
+
+## 📦 Requisitos
 
 - Python 3.8 o superior
 
-### Instalación de dependencias
+### Instalación de dependencias:
 
 ```bash
-pip install streamlit pandas matplotlib plotly openpyxl requests beautifulsoup4 ics
+pip install -r requirements.txt
 ```
 
 ---
 
 ## ▶️ Cómo ejecutar la app
 
-1. Cloná o descomprimí el contenido del ZIP.
-2. Desde la carpeta `finanzas_personales`, ejecutá:
+1. Cloná o descomprimí este repositorio.
+2. Ejecutá:
 
 ```bash
 streamlit run app.py
 ```
 
-3. Usá el menú lateral para acceder a:
+3. Usá el menú lateral para navegar entre:
    - Dashboard
    - Ingreso manual
-   - Consulta de dólar MEP
-   - Generación de recordatorios
+   - Cotización dólar MEP
+   - Recordatorios
 
 ---
 
-## 📅 Recordatorios
+## 🌍 Publicación en Streamlit Cloud
 
-Usá `vencimientos_template.csv` como base para tus eventos de pago. Luego cargalo desde la sección **"Generar recordatorios"** para obtener un archivo `.ics` importable en Google Calendar o Outlook.
-
----
-
-## 📂 Archivos incluidos
-
-- `app.py`
-- `ingreso_manual.py`
-- `dashboard.py`
-- `dolar_mep.py`
-- `vencimientos.py`
-- `vencimientos_template.csv`
+1. Subí este repo a GitHub.
+2. Ingresá a [streamlit.io/cloud](https://streamlit.io/cloud).
+3. Vinculá tu cuenta de GitHub.
+4. Deploy → seleccioná `app.py` como archivo principal.
 
 ---
 
-¡Gracias por usar esta app! 💼💡
+¡Listo! Ahora tenés una herramienta visual y flexible para controlar tus finanzas 💼📈
